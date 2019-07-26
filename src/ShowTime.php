@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace MovieTicketFee\Domain;
+namespace MovieTicketFee;
 
 use Carbon\Carbon;
 
@@ -22,8 +22,18 @@ class ShowTime
         return $this->dateTime->day === self::MOVIE_DAY;
     }
 
-    public function late(): bool
+    public function lateShow(): bool
     {
         return $this->dateTime->hour >= 20;
+    }
+
+    public function weekDay(): bool
+    {
+        return $this->dateTime->isWeekday();
+    }
+
+    public function weekEnd(): bool
+    {
+        return $this->dateTime->isWeekend();
     }
 }

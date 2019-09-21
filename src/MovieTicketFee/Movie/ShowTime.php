@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace MovieTicketFee;
+namespace MovieTicketFee\Movie;
 
 use Carbon\Carbon;
 

@@ -1,9 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace MovieTicketFee;
+namespace MovieTicketFee\Movie;
 
-class Fee
+use InvalidArgumentException;
+
+class MovieFee
 {
     /** @var int */
     private $amount;
@@ -24,7 +26,7 @@ class Fee
     private function setAmount(int $amount): void
     {
         if ($amount < 0) {
-            throw new \InvalidArgumentException('Invalid Fee.');
+            throw new InvalidArgumentException('Invalid Fee.');
         }
 
         $this->amount = $amount;

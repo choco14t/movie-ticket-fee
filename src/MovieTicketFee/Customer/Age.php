@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace MovieTicketFee;
+namespace MovieTicketFee\Customer;
+
+use InvalidArgumentException;
 
 class Age
 {
@@ -20,7 +22,7 @@ class Age
     private function setValue(int $value)
     {
         if ($value < 0) {
-            throw new \InvalidArgumentException('Invalid age.');
+            throw new InvalidArgumentException('Invalid age.');
         }
 
         $this->value = $value;
